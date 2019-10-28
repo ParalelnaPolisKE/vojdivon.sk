@@ -13,13 +13,14 @@
       html {
         background: #000;
         color: #fff;
+        overflow: hidden;
       }
 
       body {
         font-family: "Roboto Mono", monospace;
         max-width: 800px;
         margin: 0 auto;
-        padding: 1.25rem;
+        padding: 1.25rem 3rem;
         display: flex;
         flex-direction: column;
         min-height: calc(100vh - 2.5rem);
@@ -49,15 +50,18 @@
       }
 
       .polis-list {
+        display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 0;
         list-style: none;
         font-size: 1rem;
+        transition: transform 0.5s ease;
       }
 
       .polis-list__item {
         flex: 1;
-        transition: transform 0.5s ease;
+        transition: all 0.5s ease;
       }
 
       .polis-list__item + .polis-list__item {
@@ -88,7 +92,7 @@
         }
 
         .polis-list {
-          display: flex;
+          flex-direction: row;
           font-size: 1.25rem;
         }
 
@@ -99,9 +103,19 @@
       }
 
       @media (pointer: fine) {
+        .polis-list:hover {
+          transform: scale(0.85);
+        }
+
+        .polis-list:hover .polis-list__item {
+          filter: brightness(0.5);
+        }
+
         .polis-list__item:hover {
-          transform: scale(1.25);
+          transform: scale(1.45);
           z-index: 100;
+          box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.75);
+          filter: brightness(1) !important;
         }
       }
 
