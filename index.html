@@ -19,10 +19,10 @@
         font-family: "Roboto Mono", monospace;
         max-width: 800px;
         margin: 0 auto;
-        padding: 3rem;
+        padding: 1.25rem;
         display: flex;
         flex-direction: column;
-        min-height: calc(100vh - 6rem);
+        min-height: calc(100vh - 2.5rem);
         justify-content: center;
       }
 
@@ -74,6 +74,11 @@
       }
 
       @media (min-width: 550px) {
+        body {
+          padding: 3rem;
+          min-height: calc(100vh - 6rem);
+        }
+
         .logo {
           width: 300px;
         }
