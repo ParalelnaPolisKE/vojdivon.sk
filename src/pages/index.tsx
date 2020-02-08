@@ -21,7 +21,7 @@ const polisList = [
   },
   {
     name: "Wien",
-    url: "https://www.parallele.at/pa",
+    url: "https://www.parallele.at/",
     motto: "Tritt ein in das Aussen"
   },
   {
