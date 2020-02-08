@@ -93,8 +93,15 @@ img {
   }
 
   .polis-list__item + .polis-list__item {
-    margin: 0;
+    margin-top: 0;
+  }
+
+  .polis-list__item:nth-child(even) {
     margin-left: -1px;
+  }
+
+  .polis-list__item:nth-child(n + 3) {
+    margin-top: -1px;
   }
 }
 
