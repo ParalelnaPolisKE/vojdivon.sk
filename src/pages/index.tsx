@@ -26,7 +26,7 @@ const polisList = [
   },
   {
     name: "Barcelona",
-    url: "https://polisparallela.cat/",
+    url: "https://polytech.barcelona/",
     motto: "entra afuera"
   },
 
