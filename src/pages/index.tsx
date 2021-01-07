@@ -25,15 +25,14 @@ const polisList = [
     motto: "Tritt ein in das Aussen"
   },
   {
-    name: "Barcelona",
-    url: "https://polytech.barcelona/",
-    motto: "entra afuera"
-  },
-
-  {
     name: "Decentruck",
     url: "https://www.paralelnipolis.cz/koncepty/decentruck/",
     motto: "opt-out"
+  },
+  {
+    name: "BORDEL Hackerspace",
+    url: "https://paralelnapolis.sk/svet",
+    motto: "God bless this mess!"
   }
 ];
 
