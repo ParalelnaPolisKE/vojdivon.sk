@@ -7,50 +7,52 @@ const polisList = [
   {
     name: "Praha",
     url: "https://www.paralelnipolis.cz/",
-    motto: "vejdi ven"
+    motto: "vejdi ven",
   },
   {
     name: "Bratislava",
     url: "https://paralelnapolis.sk/",
-    motto: "vojdi von"
+    motto: "vojdi von",
   },
   {
     name: "Košice",
     url: "https://www.paralelnapoliskosice.sk/",
-    motto: "vojdi von"
+    motto: "vojdi von",
   },
   {
     name: "Wien",
     url: "https://www.parallele.at/",
-    motto: "Tritt ein in das Aussen"
+    motto: "Tritt ein in das Aussen",
   },
   {
     name: "Decentruck",
     url: "https://www.paralelnipolis.cz/koncepty/decentruck/",
-    motto: "opt-out"
+    motto: "opt-out",
   },
   {
     name: "BORDEL Hackerspace",
     url: "https://paralelnapolis.sk/svet",
-    motto: "God bless this mess!"
-  }
+    motto: "God bless this mess!",
+  },
 ];
 
 export default () => {
-  const { result, dencrypt } = useDencrypt();
+  const [result, dencrypt] = useDencrypt();
   const [title, setTitle] = useState();
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
     setPlaces(shuffle(polisList));
-    handleChangePolis("vojdi von");
-  }, []);
+    if (dencrypt) {
+      handleChangePolis("vojdi von");
+    }
+  }, [dencrypt]);
 
   useEffect(() => {
     document.title = title;
   }, [title]);
 
-  const handleChangePolis = motto => {
+  const handleChangePolis = (motto) => {
     dencrypt(motto);
     setTitle(motto);
   };
@@ -60,7 +62,7 @@ export default () => {
       <main role="main" className="content">
         <h1 className="title">{result}</h1>
         <ul className="polis-list">
-          {places.map(polis => (
+          {places.map((polis) => (
             <li key={polis.name} className="polis-list__item">
               <a
                 href={polis.url}
