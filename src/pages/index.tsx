@@ -43,10 +43,8 @@ export default () => {
 
   useEffect(() => {
     setPlaces(shuffle(polisList));
-    if (dencrypt) {
-      handleChangePolis("vojdi von");
-    }
-  }, [dencrypt]);
+    handleChangePolis("vojdi von");
+  }, []);
 
   useEffect(() => {
     document.title = title;
