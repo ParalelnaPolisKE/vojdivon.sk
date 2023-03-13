@@ -2,20 +2,22 @@
   "name": "vojdivon.sk",
   "version": "0.1.0",
   "private": true,
+  "source": "src/index.html",
   "dependencies": {
-    "next": "^10.2.3",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "use-dencrypt-effect": "^2.0.0"
   },
   "scripts": {
-    "dev": "next",
-    "start": "next start",
-    "build": "next build && next export"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "devDependencies": {
     "@types/node": "^13.7.0",
     "@types/react": "^16.9.19",
+    "@types/react-dom": "^18.0.11",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10",
     "typescript": "^3.7.5"
   }
 }

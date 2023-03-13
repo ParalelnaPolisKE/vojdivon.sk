@@ -1,7 +1,10 @@
+import { createRoot } from "react-dom/client";
 import React, { useEffect, useState } from "react";
 import { useDencrypt } from "use-dencrypt-effect";
 
-import { shuffle } from "../utils";
+import { shuffle } from "./utils";
+
+const logo = new URL("./logo.png", import.meta.url);
 
 const polisList = [
   {
@@ -36,7 +39,7 @@ const polisList = [
   },
 ];
 
-export default () => {
+const App = () => {
   const [result, dencrypt] = useDencrypt();
   const [title, setTitle] = useState();
   const [places, setPlaces] = useState([]);
@@ -65,6 +68,7 @@ export default () => {
               <a
                 href={polis.url}
                 className="polis-list__city"
+                onFocus={() => handleChangePolis(polis.motto)}
                 onMouseEnter={() => handleChangePolis(polis.motto)}
               >
                 {polis.name}
@@ -75,8 +79,13 @@ export default () => {
       </main>
 
       <footer>
-        <img className="logo" src="/logo.png" alt="logo Paralená Polis" />
+        <img className="logo" src={logo} alt="logo Paralená Polis" />
       </footer>
     </>
   );
 };
+
+const container = document.getElementById("app");
+const root = createRoot(container);
+
+root.render(<App />);
